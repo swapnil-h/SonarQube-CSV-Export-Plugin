@@ -243,8 +243,9 @@ function showProjects(responseProjects) {
 	configList.appendChild(document.createElement('br'));
 	var generateCSVButton = document.getElementById("generateCSV");
 	var projectKey = getProjectKeyDropdownValues("projectId");
-	generateCSVButton.setAttribute('onclick','projectOnClick();');
-
+	generateCSVButton.addEventListener("click", function () {
+		projectOnClick(projectKey);
+	  });
 }
 
 function updateBranchesDropdown(configList)
